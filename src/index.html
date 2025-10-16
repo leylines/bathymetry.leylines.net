@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+
+    <html itemscope itemtype="http://schema.org/Map">
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+
+    <!-- Place this data between the <head> tags of your website -->
+    <meta name="description" content="<%= htmlWebpackPlugin.options.pageDescription %>" />
+    <title><%= htmlWebpackPlugin.options.pageName %></title>
+
+    <!-- Schema.org markup for Google+ and also default schema for other search engines -->
+    <meta itemprop="name" content="<%= htmlWebpackPlugin.options.pageName %>">
+    <meta itemprop="description" content="<%= htmlWebpackPlugin.options.pageDescription %>">
+    <meta itemprop="image" content="<%= htmlWebpackPlugin.options.pageURL %>/favicons/apple-touch-startup-image-1334x750.png">
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@EarthAndData">
+    <meta name="twitter:title" content="<%= htmlWebpackPlugin.options.pageName %>">
+    <meta name="twitter:description" content="<%= htmlWebpackPlugin.options.pageDescription %>">
+    <meta name="twitter:creator" content="@EarthAndData">
+    <!-- Twitter summary card with large image must be at least 280x150px -->
+    <meta name="twitter:image:src" content="<%= htmlWebpackPlugin.options.pageURL %>/favicons/apple-touch-startup-image-1334x750.png">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="<%= htmlWebpackPlugin.options.pageName %>" />
+    <meta property="og:type" content="map" />
+    <meta property="og:url" content="<%= htmlWebpackPlugin.options.pageURL %>" />
+    <meta property="og:image" content="<%= htmlWebpackPlugin.options.pageURL %>/favicons/apple-touch-startup-image-1334x750.png" />
+    <meta property="og:description" content="<%= htmlWebpackPlugin.options.pageDescription %>" />
+    <meta property="og:site_name" content="<%= htmlWebpackPlugin.options.pageName %>" />
+    <meta property="article:published_time" content="2023-05-25T21:30:00Z" />
+    <meta property="article:modified_time" content="<%= htmlWebpackPlugin.options.buildDate %>" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Map",
+      "mainEntityOfPage": {
+        "@type": "WebPage"
+      },
+      "image": {
+        "@type": "ImageObject",
+        "url": "<%= htmlWebpackPlugin.options.pageURL %>/favicons/apple-touch-startup-image-1334x750.png",
+        "height": 750,
+        "width": 1334
+      },
+      "datePublished": "2023-05-25T21:30:00Z",
+      "dateModified": "<%= htmlWebpackPlugin.options.buildDate %>",
+      "author": {
+        "@type": "Person",
+        "name": "Joerg Roth"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Leylines",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "<%= htmlWebpackPlugin.options.pageURL %>/favicons/apple-touch-startup-image-1334x750.png",
+          "width": 1334,
+          "height": 750
+        }
+      },
+      "description": "<%= htmlWebpackPlugin.options.pageDescription %>"
+    }
+    </script>
+
+
+  </head>
+  <body>
+    <div id="cesiumContainer" class="fullSize">
+      <a href="https://maps.leylines.net"><img src="https://maps.leylines.net/images/leylines-logo.svg" alt="Leylines Logo" class="logo"></a>
+    </div>
+    <div id="toolbar">
+      <table>
+        <tbody>
+          <tr>
+            <td><b>Elevation</b></td>
+          </tr>
+          <tr>
+            <td>-10000m</td>
+            <td><canvas id="colorRamp"></canvas></td>
+            <td>2000m</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+  <svg>
+    <filter id="wavy2">
+      <feTurbulence x="0" y="0" baseFrequency="0.02" numOctaves="5" seed="1" />
+      <feDisplacementMap in="SourceGraphic" scale="20" />
+    </filter>
+  </svg>
+</html>

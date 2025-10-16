@@ -1,0 +1,39 @@
+html,
+body,
+#cesiumContainer {
+  display: block;
+  position: absolute;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  color: white;
+}
+
+#toolbar {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 11px;
+  position: absolute;
+  top: 220px;
+  left: 2px;
+}
+
+.lil-gui {
+  left: 2px;
+  --name-width: 55%;
+  --background-color: black;
+}
+
+.logo {
+  position: absolute;
+  display: block;
+  width: 10%;
+  margin-left: 45%;
+  margin-right: 45%;
+  bottom: 5px;
+  z-index: 999;
+}
